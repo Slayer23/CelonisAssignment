@@ -3,7 +3,7 @@
 class serviceNow{
 
     getMainHeading(){
-        return cy.get('div[class="fullscreen-app__headline ng-binding"]',{timeout:8000})
+        return cy.get('div[class="fullscreen-app__headline ng-binding"]',{timeout:16000})
     }
 
     getSubHeading(_elementIdentifier){

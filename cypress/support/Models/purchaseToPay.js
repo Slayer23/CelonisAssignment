@@ -3,7 +3,7 @@
 class purchaseToPay{
 
     getAnalysisType(){
-        return cy.get('div[class="responsive-nav__header ng-binding"]')
+        return cy.get('div[class="responsive-nav__header ng-binding"]',{timeout:16000})
     }
 
     getSidebarNavigation(_elementIdentifier){
@@ -11,7 +11,7 @@ class purchaseToPay{
     }
 
     getMainHeading(){
-        return cy.get('div[class="fullscreen-app__headline ng-binding"]',{timeout:8000})
+        return cy.get('div[class="fullscreen-app__headline ng-binding"]')
     }
 
     getUsersDataElements(_elementIdentifier){

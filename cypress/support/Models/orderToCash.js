@@ -3,7 +3,7 @@
 class orderToCash{
 
     getAnalysisType(){
-        return cy.get('div[class="responsive-nav__header ng-binding"]',{timeout:8000})
+        return cy.get('div[class="responsive-nav__header ng-binding"]',{timeout:16000})
     }
 
     getSidebarNavigation(_elementIdentifier){

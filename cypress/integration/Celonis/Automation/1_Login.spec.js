@@ -44,7 +44,7 @@ describe('Validate Celonis Login Page',()=>
         LoginPage.getLoginButton().click()
 
         //Check Error Message Label
-        LoginPage.getErrorMessageLabel().should('have.text',"Email or password are incorrect. ")
+        LoginPage.getErrorMessageLabel().should('have.text','Email or password are incorrect. ')
     })
 
     it('A002 - Login to Celonis - invalid password',()=>
@@ -53,7 +53,7 @@ describe('Validate Celonis Login Page',()=>
         LoginPage.getPasswordTextbox().clear().type(testData.password+'random')
         LoginPage.getLoginButton().click()
 
-        LoginPage.getErrorMessageLabel().should('have.text',"Email or password are incorrect. ")
+        LoginPage.getErrorMessageLabel().should('have.text','Email or password are incorrect. ')
     })
 
     it('A003 - Login to Celonis - blank username',()=>
@@ -62,7 +62,7 @@ describe('Validate Celonis Login Page',()=>
         LoginPage.getPasswordTextbox().clear().type(testData.password)
         LoginPage.getLoginButton().click()
 
-        LoginPage.getErrorMessageLabel().should('have.text',"Email or password are incorrect. ")
+        LoginPage.getErrorMessageLabel().should('have.text','Email or password cannot be blank.')
     })
     
     it('A004 - Login to Celonis - blank password',()=>
@@ -71,10 +71,19 @@ describe('Validate Celonis Login Page',()=>
         LoginPage.getPasswordTextbox().clear()
         LoginPage.getLoginButton().click()
 
-        LoginPage.getErrorMessageLabel().should('have.text',"Email or password are incorrect. ")
+        LoginPage.getErrorMessageLabel().should('have.text','Email or password cannot be blank.')
     })
 
-    it('A005 - Login to Celonis - successful login',()=>
+    it('A005 - Login to Celonis - blank username & password',()=>
+    {
+        LoginPage.getUsernameTextbox().clear()
+        LoginPage.getPasswordTextbox().clear()
+        LoginPage.getLoginButton().click()
+
+        LoginPage.getErrorMessageLabel().should('have.text','Email or password cannot be blank.')
+    })
+
+    it('A006 - Login to Celonis - successful login',()=>
     {        
         LoginPage.getUsernameTextbox().clear().type(testData.username)
         LoginPage.getPasswordTextbox().clear().type(testData.password)
@@ -85,7 +94,7 @@ describe('Validate Celonis Login Page',()=>
                 
     })
 
-    it('A006 - Login to Celonis - successful Logout',()=>
+    it('A007 - Login to Celonis - successful Logout',()=>
     {
         HomeScreen.logOutOfApplication()
     })
