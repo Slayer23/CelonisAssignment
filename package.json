@@ -1,0 +1,14 @@
+{
+  "name": "celnoisautomation",
+  "version": "1.0.0",
+  "description": "Celnois Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "twinklesirola",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
+}
