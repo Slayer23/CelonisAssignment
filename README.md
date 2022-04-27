@@ -1,4 +1,4 @@
-# CelonisAssignment
+# CelonisAutomation
 
 	Note: Node.js must be installed on the test machine
 
